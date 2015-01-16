@@ -1,0 +1,4 @@
+J:\C\Учеба\C#\work\Labs\hb_cap\bin\Debug\hb_cap.exe
+J:\C\Учеба\C#\work\Labs\hb_cap\bin\Debug\hb_cap.pdb
+J:\C\Учеба\C#\work\Labs\hb_cap\obj\x86\Debug\hb_cap.exe
+J:\C\Учеба\C#\work\Labs\hb_cap\obj\x86\Debug\hb_cap.pdb

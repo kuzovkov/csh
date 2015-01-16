@@ -1,0 +1,5 @@
+J:\C\Учеба\C#\work\Labs\tcp_client\bin\Debug\tcp_client.exe
+J:\C\Учеба\C#\work\Labs\tcp_client\bin\Debug\tcp_client.pdb
+J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.exe
+J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.pdb
+J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.csprojResolveAssemblyReference.cache

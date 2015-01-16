@@ -1,0 +1,4 @@
+J:\C\Учеба\C#\work\Labs\tcp_listener\bin\Debug\tcp_listener.exe
+J:\C\Учеба\C#\work\Labs\tcp_listener\bin\Debug\tcp_listener.pdb
+J:\C\Учеба\C#\work\Labs\tcp_listener\obj\x86\Debug\tcp_listener.exe
+J:\C\Учеба\C#\work\Labs\tcp_listener\obj\x86\Debug\tcp_listener.pdb

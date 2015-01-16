@@ -1,0 +1,4 @@
+J:\C\Учеба\C#\work\Labs\xml_reader\bin\Debug\xml_reader.exe
+J:\C\Учеба\C#\work\Labs\xml_reader\bin\Debug\xml_reader.pdb
+J:\C\Учеба\C#\work\Labs\xml_reader\obj\x86\Debug\xml_reader.exe
+J:\C\Учеба\C#\work\Labs\xml_reader\obj\x86\Debug\xml_reader.pdb
