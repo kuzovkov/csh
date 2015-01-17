@@ -2,10 +2,12 @@
 	<ip_address>127.0.0.1</ip_address>
 	<port>5031</port>
 	<dump_folder>tcp_dump</dump_folder>
-	<dump_number>11</dump_number>
+	<dump_request_number>11</dump_request_number>
+	<dump_response_number>11</dump_response_number>
 	<dump_ext>bin</dump_ext>
 	<dump_request_prefix>req</dump_request_prefix>
 	<dump_response_prefix>res</dump_response_prefix>
 	<read_buffer>40960</read_buffer>
+	<select_dump>0,1,2,3,4,5,6,7,8,9,10</select_dump>
 	
 </config>

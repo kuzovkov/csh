@@ -9,6 +9,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using MyConfig;
+using MyDump;
 
 
 namespace hb_cap
@@ -17,10 +18,7 @@ namespace hb_cap
     {
         private Config config;
         private TcpListener server = null;
-        private Byte[][] request = null;
-        private Byte[][] response = null;
-        private Byte[] responseDefault = new Byte[] { 0x07 };
-        
+        private Dump dump = null;
         /**
          * Конструктор
          * @param config объект содержащий конфигурационные данные
@@ -28,6 +26,8 @@ namespace hb_cap
         public Server(Config config)
         {
             this.config = config;
+            this.dump = new Dump(config);
+
             try 
             {
                 IPAddress localAddr = IPAddress.Parse(this.config.getValue("ip_address"));
@@ -42,82 +42,10 @@ namespace hb_cap
         }
 
         /**
-         * Сравнение двух массивов байт
-         * @param data1, data2 сравниваемые массивы байт
-         * @return true если совпадают, иначе false
-         * */
-        private bool cmpData(Byte[] data1, Byte[] data2 )
-        {
-            if (data1 == null || data2 == null) return false;
-            int len = (data1.Length < data2.Length) ? data1.Length : data2.Length;
-            for (int i = 0; i < len; i++)
-            {
-                if (data1[i] != data2[i]) return false;
-            }
-            return true;
-        }
-
-        /**
-         * Считывание в массивы дампов запросов и ответов из файлов
-         * */
-        private void loadDumps()
-        {
-            /*inicialize dumps array*/
-            
-            this.request = new Byte[this.config.getIntValue("dump_number")][];
-            this.response = new Byte[this.config.getIntValue("dump_number")][];
-            
-            /*read dumps of requests*/
-            string filename = "";
-            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
-            {
-                filename = config.getValue("dump_folder") + @"\" + config.getValue("dump_request_prefix") + "." + i.ToString() + "." + config.getValue("dump_ext");
-                if (File.Exists(filename))
-                {
-                    this.request[i] = File.ReadAllBytes(filename);
-                }
-                else
-                {
-                    this.request[i] = null;
-                }
-            }
-            
-            /*read dumps of responses*/
-            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
-            {
-                filename = config.getValue("dump_folder") + @"\" + config.getValue("dump_response_prefix") + "." + i.ToString() + "." + config.getValue("dump_ext");
-                if (File.Exists(filename))
-                {
-                    this.response[i] = File.ReadAllBytes(filename);
-                }
-                else
-                {
-                    this.response[i] = null;
-                }
-            }
-        }
-
-        /**
-         * Сравнение массива байт из запроса с имеющимися и 
-         * возвращение соответсвующего индекса байтового массива ответа
-         * @param bytes входной массив байт
-         * @return соответсвующий индекс или -1 
-         * */
-        private Byte[] selectResponse(Byte[] bytes)
-        {
-            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
-            {
-                if (cmpData(bytes, this.request[i])) return this.response[i];
-            }
-            return this.response[5];
-        }
-
-        /**
          * Старт сервера
          * */
         public void Start()
         {
-            this.loadDumps();
             try
             {
                 // Start listening for client requests.
@@ -154,7 +82,7 @@ namespace hb_cap
                             }
 
                             // Send back a response.
-                            resp = selectResponse(bytes);
+                            resp = this.dump.select(bytes);
                             stream.Write(resp, 0, resp.Length);
                             Console.WriteLine("\nSent:");
                             for (int i = 0; i < resp.Length; i++)

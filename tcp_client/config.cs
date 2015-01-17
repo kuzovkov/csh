@@ -1,4 +1,7 @@
-﻿using System;
+﻿/**
+ * Класс для считывания из XML файла и хранения конфигурационных данных
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +14,7 @@ namespace MyConfig
     class Config
     {
         private XmlReader reader = null;
+        /*структура для хранения записей*/
         public struct record
         {
             public string name;
@@ -26,6 +30,10 @@ namespace MyConfig
 
         private List<record> confItem = new List<record>();
 
+        /**
+         * конструктор, принимает имя файла конфигурации
+         * @param filename имя файла конфигурации
+         * */
         public Config(string filename)
         {
             if (File.Exists(filename))
@@ -39,6 +47,10 @@ namespace MyConfig
             else { Console.WriteLine("Fail open file {0}", filename); }
         }
 
+        /**
+         * чтение данных конфигурации из файла
+         * @param reader объект XmlReader
+         * */
         private void read(XmlReader reader)
         {
             string value;
@@ -53,6 +65,11 @@ namespace MyConfig
             }
         }
 
+        /**
+        * получение строкового значения
+        * @param name имя значения
+        * @return значение параметра
+        * */
         public string getValue(string name)
         {
             foreach (record rec in this.confItem)
@@ -62,6 +79,11 @@ namespace MyConfig
             return "";
         }
 
+        /**
+        * получение целочисленного значения
+        * @param name имя значения
+        * @return значение параметра
+        * */
         public int getIntValue(string name)
         {
             foreach (record rec in this.confItem)
@@ -71,6 +93,9 @@ namespace MyConfig
             return 0;
         }
 
+        /**
+        * вывод на печать всех пар имя: значение
+        * */
         public void prinList()
         {
             foreach (record rec in this.confItem)
