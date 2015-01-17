@@ -8,6 +8,7 @@ using System.Text;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using MyConfig;
 
 namespace tcp_client
 {
@@ -17,7 +18,7 @@ namespace tcp_client
        
         static void Main(string[] args)
         {
-            Config conf = new Config();
+            Config conf = new Config("hb_cap.conf.xml");
             TCPClient client = new TCPClient(conf);
             
             

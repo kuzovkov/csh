@@ -8,6 +8,7 @@ using System.Text;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using MyConfig;
 
 
 namespace hb_cap
@@ -16,7 +17,6 @@ namespace hb_cap
     {
         private Config config;
         private TcpListener server = null;
-        private Int32 port = 0;
         private Byte[][] request = null;
         private Byte[][] response = null;
         private Byte[] responseDefault = new Byte[] { 0x07 };
@@ -30,9 +30,9 @@ namespace hb_cap
             this.config = config;
             try 
             {
-                IPAddress localAddr = IPAddress.Parse(this.config.ip);
+                IPAddress localAddr = IPAddress.Parse(this.config.getValue("ip_address"));
                 // TcpListener server = new TcpListener(port);
-                this.port = this.config.port;
+                Int32 port = this.config.getIntValue("port");
                 this.server = new TcpListener(localAddr, port);
             }
             catch (SocketException e)
@@ -64,14 +64,14 @@ namespace hb_cap
         {
             /*inicialize dumps array*/
             
-            this.request = new Byte[this.config.dump_number][];
-            this.response = new Byte[this.config.dump_number][];
+            this.request = new Byte[this.config.getIntValue("dump_number")][];
+            this.response = new Byte[this.config.getIntValue("dump_number")][];
             
             /*read dumps of requests*/
             string filename = "";
-            for (int i = 0; i < this.config.dump_number; i++)
+            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
             {
-                filename = config.dump_folder + @"\" + config.dump_request_prefix + "." + i.ToString() + "." + config.dump_ext;
+                filename = config.getValue("dump_folder") + @"\" + config.getValue("dump_request_prefix") + "." + i.ToString() + "." + config.getValue("dump_ext");
                 if (File.Exists(filename))
                 {
                     this.request[i] = File.ReadAllBytes(filename);
@@ -83,9 +83,9 @@ namespace hb_cap
             }
             
             /*read dumps of responses*/
-            for (int i = 0; i < this.config.dump_number; i++)
+            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
             {
-                filename = config.dump_folder + @"\" + config.dump_response_prefix + "." + i.ToString() + "." + config.dump_ext;
+                filename = config.getValue("dump_folder") + @"\" + config.getValue("dump_response_prefix") + "." + i.ToString() + "." + config.getValue("dump_ext");
                 if (File.Exists(filename))
                 {
                     this.response[i] = File.ReadAllBytes(filename);
@@ -105,7 +105,7 @@ namespace hb_cap
          * */
         private Byte[] selectResponse(Byte[] bytes)
         {
-            for (int i = 0; i < this.config.dump_number; i++)
+            for (int i = 0; i < this.config.getIntValue("dump_number"); i++)
             {
                 if (cmpData(bytes, this.request[i])) return this.response[i];
             }
@@ -124,12 +124,12 @@ namespace hb_cap
                 this.server.Start();
 
                 // Buffer for reading data
-                Byte[] bytes = new Byte[this.config.read_buffer];
+                Byte[] bytes = new Byte[this.config.getIntValue("read_buffer")];
                 Byte[] resp = null;
                 // Enter the listening loop.
                 while (true)
                 {
-                    Console.Write("\nWaiting for a connection on port {0} ... ", this.port);
+                    Console.Write("\nWaiting for a connection on port {0} ... ", config.getValue("port"));
 
                     // Perform a blocking call to accept requests.
                     // You could also user server.AcceptSocket() here.

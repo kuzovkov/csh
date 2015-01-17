@@ -6,12 +6,12 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 
-namespace MyConfig
+namespace Config
 {
     class Config
     {
         private XmlReader reader = null;
-        public struct record
+        public struct record 
         {
             public string name;
             public string value;
@@ -24,7 +24,7 @@ namespace MyConfig
 
         };
 
-        private List<record> confItem = new List<record>();
+        private List<record> confItem = new List<record>(); 
 
         public Config(string filename)
         {
@@ -49,7 +49,7 @@ namespace MyConfig
                 name = reader.Name;
                 if (value == "") continue;
                 record rec = new record(name, value);
-                this.confItem.Add(rec);
+                this.confItem.Add(rec); 
             }
         }
 
@@ -62,23 +62,22 @@ namespace MyConfig
             return "";
         }
 
-        public int getIntValue(string name)
-        {
-            foreach (record rec in this.confItem)
-            {
-                if (rec.name == name) return Convert.ToInt32(rec.value, 10);
-            }
-            return 0;
-        }
-
         public void prinList()
         {
             foreach (record rec in this.confItem)
             {
-                Console.WriteLine("{0}: {1}", rec.name, rec.value);
+                Console.WriteLine("{0}: {1}",rec.name, rec.value);
             }
         }
     }
-
-
+    
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Config conf = new Config("hb_cap.conf.xml");
+            conf.prinList();
+            Console.WriteLine(conf.getValue("ip_address"));
+        }
+    }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using MyConfig;
 
 namespace tcp_client
 {
@@ -29,7 +30,7 @@ namespace tcp_client
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
-                TcpClient client = new TcpClient(this.conf.ip, this.conf.port);
+                TcpClient client = new TcpClient(this.conf.getValue("ip_address"), this.conf.getIntValue("port"));
 
                 // Translate the passed message into ASCII and store it as a Byte array.
                 //Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);         
@@ -51,7 +52,7 @@ namespace tcp_client
                 // Receive the TcpServer.response.
 
                 // Buffer to store the response bytes.
-                Byte[] read_buf = new Byte[this.conf.read_buffer];
+                Byte[] read_buf = new Byte[this.conf.getIntValue("read_buffer")];
 
                 // String to store the response ASCII representation.
                 String responseData = String.Empty;

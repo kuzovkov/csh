@@ -1,75 +1,84 @@
-﻿/**
- * Класс содержащий параметры конфигурации
- * */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
 using System.IO;
+using System.Collections.Generic;
 
-namespace tcp_client
+namespace MyConfig
 {
     class Config
     {
-        public string config_file = "hb_cap.conf.xml";
-        public Int32 port = 10000;
-        public string ip = "127.0.0.1";
-        public string dump_folder = "tcp_dump";
-        public int dump_number = 0;
-        public string dump_ext = "bin";
-        public string dump_request_prefix = "req";
-        public string dump_response_prefix = "res";
-        public int read_buffer = 4096;
+        private XmlReader reader = null;
+        public struct record
+        {
+            public string name;
+            public string value;
 
-        public Config() { read();  }
+            public record(string n, string val)
+            {
+                name = n;
+                value = val;
+            }
+
+        };
+
+        private List<record> confItem = new List<record>();
 
         public Config(string filename)
         {
-            this.config_file = filename;
-            read();
+            if (File.Exists(filename))
+            {
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.IgnoreWhitespace = true;
+                settings.IgnoreComments = true;
+                this.reader = XmlReader.Create(filename, settings);
+                read(this.reader);
+            }
+            else { Console.WriteLine("Fail open file {0}", filename); }
         }
-        
-        private bool read()
+
+        private void read(XmlReader reader)
         {
-            if (!File.Exists(this.config_file))
+            string value;
+            string name;
+            while (reader.Read())
             {
-                Console.WriteLine("File {0} not exists", this.config_file);
-                return false;
+                value = reader.ReadString();
+                name = reader.Name;
+                if (value == "") continue;
+                record rec = new record(name, value);
+                this.confItem.Add(rec);
             }
-            string s = "";
-            string xmlString = "";
-            StreamReader sr = File.OpenText(config_file);
-            while ((s = sr.ReadLine()) != null)
+        }
+
+        public string getValue(string name)
+        {
+            foreach (record rec in this.confItem)
             {
-                xmlString += s;
+                if (rec.name == name) return rec.value;
             }
-            XmlReader reader = XmlReader.Create(new StringReader(xmlString));
-            try
+            return "";
+        }
+
+        public int getIntValue(string name)
+        {
+            foreach (record rec in this.confItem)
             {
-                reader.ReadToFollowing("ip_address");
-                this.ip = reader.ReadElementContentAsString();
-                reader.ReadToFollowing("port");
-                this.port = reader.ReadElementContentAsInt();
-                reader.ReadToFollowing("dump_folder");
-                this.dump_folder = reader.ReadElementContentAsString();
-                reader.ReadToFollowing("dump_number");
-                this.dump_number = reader.ReadElementContentAsInt();
-                reader.ReadToFollowing("dump_ext");
-                this.dump_ext = reader.ReadElementContentAsString();
-                reader.ReadToFollowing("dump_request_prefix");
-                this.dump_request_prefix = reader.ReadElementContentAsString();
-                reader.ReadToFollowing("dump_response_prefix");
-                this.dump_response_prefix = reader.ReadElementContentAsString();
-                reader.ReadToFollowing("read_buffer");
-                this.read_buffer = reader.ReadElementContentAsInt();
+                if (rec.name == name) return Convert.ToInt32(rec.value, 10);
             }
-            catch (Exception e) 
+            return 0;
+        }
+
+        public void prinList()
+        {
+            foreach (record rec in this.confItem)
             {
-                Console.WriteLine("Ошибка парсинга {0} - {1}",this.config_file, e.Message);
-                return false;
+                Console.WriteLine("{0}: {1}", rec.name, rec.value);
             }
-            return true;
         }
     }
+
+
 }

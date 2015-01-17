@@ -1,0 +1,1 @@
+config\bin\Debug\config.exe %1

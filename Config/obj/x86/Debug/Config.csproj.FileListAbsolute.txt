@@ -1,0 +1,4 @@
+J:\C\Учеба\C#\work\Labs\Config\bin\Debug\Config.exe
+J:\C\Учеба\C#\work\Labs\Config\bin\Debug\Config.pdb
+J:\C\Учеба\C#\work\Labs\Config\obj\x86\Debug\Config.exe
+J:\C\Учеба\C#\work\Labs\Config\obj\x86\Debug\Config.pdb
