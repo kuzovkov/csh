@@ -9,5 +9,7 @@
 	<dump_response_prefix>res</dump_response_prefix>
 	<read_buffer>40960</read_buffer>
 	<select_dump>0,1,2,3,4,5,6,7,8,9,10</select_dump>
+	<full_congruence>0</full_congruence>
+	<response_default>10</response_default>
 	
 </config>

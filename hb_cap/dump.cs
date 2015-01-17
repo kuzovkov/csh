@@ -18,7 +18,6 @@ namespace MyDump
         private Byte[][] request = null;
         private Byte[][] response = null;
         private int[] assumeDump = null;
-        private Byte[] responseDefault = new Byte[] { 0x07 };
 
         public Dump(Config conf) 
         {
@@ -34,8 +33,10 @@ namespace MyDump
          * */
         public bool cmp(Byte[] data1, Byte[] data2, int size)
         {
+            
             if (data1 == null || data2 == null) return false;
-            if (data2.Length != size) return false;
+            if (this.config.getIntValue("full_congruence") != 0 )
+                if (data2.Length != size) return false;
             int len = (data1.Length < data2.Length) ? data1.Length : data2.Length;
             for (int i = 0; i < len; i++)
             {
@@ -110,7 +111,7 @@ namespace MyDump
          * Сравнение массива байт из запроса с имеющимися и 
          * возвращение соответсвующего байтового массива ответа
          * @param bytes входной массив байт
-         * @return соответсвующий индекс или -1 
+         * @return соответсвующий массив или массив по-умолчанию 
          * */
         public Byte[] select(Byte[] bytes, int size)
         {
@@ -118,7 +119,7 @@ namespace MyDump
             {
                 if (this.cmp(bytes, this.request[i], size)) return this.response[this.assumeDump[i]];
             }
-            return this.responseDefault;
+            return this.response[this.config.getIntValue("response_default")];
         }
 
     }
