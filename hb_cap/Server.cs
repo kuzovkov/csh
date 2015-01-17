@@ -82,7 +82,7 @@ namespace hb_cap
                             }
 
                             // Send back a response.
-                            resp = this.dump.select(bytes);
+                            resp = this.dump.select(bytes, read);
                             stream.Write(resp, 0, resp.Length);
                             Console.WriteLine("\nSent:");
                             for (int i = 0; i < resp.Length; i++)

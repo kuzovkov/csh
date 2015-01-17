@@ -29,11 +29,13 @@ namespace MyDump
         /**
          * Сравнение двух массивов байт
          * @param data1, data2 сравниваемые массивы байт
+         * @param size размер принятого дампа
          * @return true если совпадают, иначе false
          * */
-        public bool cmp(Byte[] data1, Byte[] data2)
+        public bool cmp(Byte[] data1, Byte[] data2, int size)
         {
             if (data1 == null || data2 == null) return false;
+            if (data2.Length != size) return false;
             int len = (data1.Length < data2.Length) ? data1.Length : data2.Length;
             for (int i = 0; i < len; i++)
             {
@@ -110,11 +112,11 @@ namespace MyDump
          * @param bytes входной массив байт
          * @return соответсвующий индекс или -1 
          * */
-        public Byte[] select(Byte[] bytes)
+        public Byte[] select(Byte[] bytes, int size)
         {
             for (int i = 0; i < this.config.getIntValue("dump_request_number"); i++)
             {
-                if (this.cmp(bytes, this.request[i])) return this.response[this.assumeDump[i]];
+                if (this.cmp(bytes, this.request[i], size)) return this.response[this.assumeDump[i]];
             }
             return this.responseDefault;
         }
