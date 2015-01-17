@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.IO;
-using System.Collections.Generic;
 
 namespace MyConfig
 {
