@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xml_reader", "xml_reader\xm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Config", "Config\Config.csproj", "{99491A66-CF45-4DC9-8A1A-4431FAD27B36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mk_dump", "mk_dump\mk_dump.csproj", "{222502F4-00DD-401A-8ED1-4CFB0C9104D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -37,6 +39,10 @@ Global
 		{99491A66-CF45-4DC9-8A1A-4431FAD27B36}.Debug|x86.Build.0 = Debug|x86
 		{99491A66-CF45-4DC9-8A1A-4431FAD27B36}.Release|x86.ActiveCfg = Release|x86
 		{99491A66-CF45-4DC9-8A1A-4431FAD27B36}.Release|x86.Build.0 = Release|x86
+		{222502F4-00DD-401A-8ED1-4CFB0C9104D4}.Debug|x86.ActiveCfg = Debug|x86
+		{222502F4-00DD-401A-8ED1-4CFB0C9104D4}.Debug|x86.Build.0 = Debug|x86
+		{222502F4-00DD-401A-8ED1-4CFB0C9104D4}.Release|x86.ActiveCfg = Release|x86
+		{222502F4-00DD-401A-8ED1-4CFB0C9104D4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,7 @@
+J:\C\Учеба\C#\work\Labs\mk_dump\bin\Debug\mk_dump.exe
+J:\C\Учеба\C#\work\Labs\mk_dump\bin\Debug\mk_dump.pdb
+J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.Form1.resources
+J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.Properties.Resources.resources
+J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.csproj.GenerateResource.Cache
+J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.exe
+J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.pdb
