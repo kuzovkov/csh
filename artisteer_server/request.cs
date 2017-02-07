@@ -86,7 +86,7 @@ namespace ArtisteerServer
                 if (this.begin_body > 0 && i >= begin_body)
                 {
                     this.body.Add(bytes[i]);
-                    if ( i == read - 1) this.body.Add(bytes[i+1]);
+                    if ( i == read - 2) this.body.Add(bytes[i+1]);
                     if (this.content_len == 0)
                     {
                         done = true;
