@@ -136,5 +136,17 @@ namespace ArtisteerServer
                 return null;
             return this.body.ToArray();
         }
+
+        public void showInfo()
+        {
+             Console.WriteLine("\n{0} {1}", this.method, this.uri);
+            List<param> headers = this.getHeaders();
+                       
+            foreach (param pair in headers)
+            {
+                Console.WriteLine("{0}: {1}", pair.name, pair.value);
+            }
+            Console.WriteLine("\n{0}", this.getBody());
+        }
     }
 }

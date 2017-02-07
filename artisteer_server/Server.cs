@@ -51,7 +51,7 @@ namespace ArtisteerServer
 
                 // Buffer for reading data
                 Byte[] bytes = new Byte[this.config.getIntValue("read_buffer")];
-                Byte[] resp = null;
+                Byte[] response = null;
                 // Enter the listening loop.
                 while (true)
                 {
@@ -77,22 +77,13 @@ namespace ArtisteerServer
                             //Console.Write(Encoding.Default.GetString(bytes));
                             req_done = req.parseData(bytes, read);
                         }//end while
-                        
-                        
-                       
-                        
-                       
-                        Console.WriteLine("\n{0} {1}", req.method, req.uri);
-                        List<param> headers = req.getHeaders();
-                       
-                        foreach (param pair in headers)
-                        {
-                            Console.WriteLine("{0}: {1}", pair.name, pair.value);
-                        }
-                        Console.WriteLine("Body: {0}", req.getBody());
 
+                        req.showInfo();
+                       
                         //todo response
-
+                        Response res = new Response(req);
+                        byte[] res_data = res.getData();
+                        stream.Write(res_data, 0, res_data.Length);
                         client.Close();
                     }
                     catch (System.IO.IOException e)
