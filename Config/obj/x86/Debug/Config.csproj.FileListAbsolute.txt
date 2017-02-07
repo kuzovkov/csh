@@ -2,3 +2,7 @@ J:\C\Учеба\C#\work\Labs\Config\bin\Debug\Config.exe
 J:\C\Учеба\C#\work\Labs\Config\bin\Debug\Config.pdb
 J:\C\Учеба\C#\work\Labs\Config\obj\x86\Debug\Config.exe
 J:\C\Учеба\C#\work\Labs\Config\obj\x86\Debug\Config.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\Config\bin\Debug\Config.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\Config\bin\Debug\Config.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\Config\obj\x86\Debug\Config.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\Config\obj\x86\Debug\Config.pdb

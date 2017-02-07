@@ -1,0 +1,6 @@
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\bin\Debug\artisteer_server.exe.config
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\bin\Debug\artisteer_server.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\bin\Debug\artisteer_server.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\obj\Debug\artisteer_server.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\obj\Debug\artisteer_server.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\artisteer_server\obj\Debug\artisteer_server.csprojResolveAssemblyReference.cache

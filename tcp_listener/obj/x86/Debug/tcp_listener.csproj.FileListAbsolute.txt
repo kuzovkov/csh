@@ -2,3 +2,8 @@ J:\C\Учеба\C#\work\Labs\tcp_listener\bin\Debug\tcp_listener.exe
 J:\C\Учеба\C#\work\Labs\tcp_listener\bin\Debug\tcp_listener.pdb
 J:\C\Учеба\C#\work\Labs\tcp_listener\obj\x86\Debug\tcp_listener.exe
 J:\C\Учеба\C#\work\Labs\tcp_listener\obj\x86\Debug\tcp_listener.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_listener\obj\x86\Debug\tcp_listener.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_listener\obj\x86\Debug\tcp_listener.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_listener\bin\Debug\tcp_listener.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_listener\bin\Debug\tcp_listener.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_listener\obj\x86\Debug\tcp_listener.csprojResolveAssemblyReference.cache

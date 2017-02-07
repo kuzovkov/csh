@@ -5,3 +5,11 @@ J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.Properties.Resources.
 J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.csproj.GenerateResource.Cache
 J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.exe
 J:\C\Учеба\C#\work\Labs\mk_dump\obj\x86\Debug\mk_dump.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\bin\Debug\mk_dump.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\bin\Debug\mk_dump.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.csprojResolveAssemblyReference.cache
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.Form1.resources
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.Properties.Resources.resources
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.csproj.GenerateResource.Cache
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\mk_dump\obj\x86\Debug\mk_dump.pdb

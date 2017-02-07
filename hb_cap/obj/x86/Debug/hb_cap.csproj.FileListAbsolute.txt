@@ -2,3 +2,7 @@ J:\C\Учеба\C#\work\Labs\hb_cap\bin\Debug\hb_cap.exe
 J:\C\Учеба\C#\work\Labs\hb_cap\bin\Debug\hb_cap.pdb
 J:\C\Учеба\C#\work\Labs\hb_cap\obj\x86\Debug\hb_cap.exe
 J:\C\Учеба\C#\work\Labs\hb_cap\obj\x86\Debug\hb_cap.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\hb_cap\bin\Debug\hb_cap.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\hb_cap\bin\Debug\hb_cap.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\hb_cap\obj\x86\Debug\hb_cap.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\hb_cap\obj\x86\Debug\hb_cap.pdb

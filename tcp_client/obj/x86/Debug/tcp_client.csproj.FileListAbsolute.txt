@@ -3,3 +3,8 @@ J:\C\Учеба\C#\work\Labs\tcp_client\bin\Debug\tcp_client.pdb
 J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.exe
 J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.pdb
 J:\C\Учеба\C#\work\Labs\tcp_client\obj\x86\Debug\tcp_client.csprojResolveAssemblyReference.cache
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_client\bin\Debug\tcp_client.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_client\bin\Debug\tcp_client.pdb
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_client\obj\x86\Debug\tcp_client.csprojResolveAssemblyReference.cache
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_client\obj\x86\Debug\tcp_client.exe
+C:\Users\user1\Documents\Visual Studio 2012\Projects\csh\tcp_client\obj\x86\Debug\tcp_client.pdb
